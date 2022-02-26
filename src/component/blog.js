@@ -3,7 +3,8 @@ import axios from 'axios'
 import { Component } from "react";
 class Blog extends Component{
 	state={
-		items:[]
+		items:[],
+		name: ''
 	}
 	componentDidMount(){
 		axios.get("https://jsonplaceholder.typicode.com/users",{
@@ -28,6 +29,14 @@ class Blog extends Component{
 		})
 
 	}
+	handls =(e)=>{
+		e.preventDefault();
+		this.setState({
+			name: document.getElementById("us").value
+		})
+		console.log(document.getElementById("us").value)
+
+	}
 	render(){
 		const users= this.state.items;
 		const listUser = users.map((item)=>{
@@ -39,6 +48,11 @@ class Blog extends Component{
 		})
 		return(
 			<div>
+				<form onSubmit={this.handls}>
+					<input type="text" id="us"/>
+					<button type="submit">add</button>
+					</form>
+					{this.state.name.toUpperCase()}
 				<h1>blog</h1>
 				{listUser}
 
