@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.item:first-of-type{
+  background-color: red;
+}
+.item:nth-of-type(2){
+  background-color: blue;
+}
+.item:last-of-type{
+  background-color: chartreuse;
+}
+.item{
+  margin: 50px;
+padding: 16px;
+background-color: cornflowerblue;
+}
